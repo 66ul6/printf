@@ -10,25 +10,16 @@ SRCS = ft_printf.c \
 
 OBJS = $(SRCS:.c=.o)
 
-LIBFT_DIR = libft
-LIBFT = $(LIBFT_DIR)/libft.a
-
 all: $(NAME)
 
-$(NAME): $(OBJS) $(LIBFT)
-	cp $(LIBFT) $(NAME)
+$(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
-
-$(LIBFT):
-	$(MAKE) -C $(LIBFT_DIR)
 
 clean:
 	$(RM) $(OBJS)
-	$(MAKE) -C $(LIBFT_DIR) clean
 
 fclean: clean
 	$(RM) $(NAME)
-	$(MAKE) -C $(LIBFT_DIR) fclean
 
 re: fclean all
 
