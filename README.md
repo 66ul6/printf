@@ -39,10 +39,3 @@ To compile and use this library, you will need:
 *   `cc` or `gcc` compiler
 *   `make`
 *   Standard C libraries (`unistd.h`, `stdlib.h`, `stdarg.h`)
-
-### Installation & Compilation
-
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/yourusername/ft_printf.git](https://github.com/yourusername/ft_printf.git)
-   cd ft_printf
