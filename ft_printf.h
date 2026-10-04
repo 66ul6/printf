@@ -11,8 +11,7 @@ int	ft_str(char *str);
 int	ft_percent(void);
 int	ft_nbr(int n);
 int	ft_unsigned(unsigned int n);
-int	ft_hex(unsigned int num, const char format);
-int	ft_ptr(unsigned long ptr);
-int	ft_ptr_hex(unsigned long num);
+int	ft_hex(unsigned int n, char format);
+int	ft_ptr(unsigned long long ptr);
 
 #endif
