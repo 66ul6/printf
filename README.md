@@ -19,7 +19,7 @@ To compile and use this library, ensure you have the following installed:
 ### Compilation and Installation
 To compile the project and generate the static library, clone the repository and run the standard `make` command at the root of the repository:
 ```bash
-git clone [https://github.com/](https://github.com/)<your_username>/ft_printf.git
+git clone [https://github.com/](https://github.com/)66ul6/printf.git
 cd ft_printf
 make
 ```
