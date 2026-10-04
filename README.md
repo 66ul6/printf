@@ -1,5 +1,8 @@
 *This activity has been created as part of the 42 curriculum by kmaghair*
 
+[![Language](https://img.shields.io/badge/language-C-blue.svg)](https://en.wikipedia.org/wiki/C_(programming_language))
+[![Norminette](https://img.shields.io/badge/norminette-passing-success.svg)](https://github.com/42School/norminette)
+
 ## Description
 `ft_printf` is a custom implementation of the standard C library function `printf`. The primary goal of this activity is to introduce the concept of variadic functions in C using `stdarg.h`, which allows a function to dynamically accept and process an indefinite number of arguments. 
 
