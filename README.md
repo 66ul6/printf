@@ -1,41 +1,42 @@
-# ft_printf
+*This activity has been created as part of the 42 curriculum by kmaghair*
 
-> A custom implementation of the standard C library function `printf`.
+## Description
+`ft_printf` is a custom implementation of the standard C library function `printf`. The primary goal of this activity is to introduce the concept of variadic functions in C using `stdarg.h`, which allows a function to dynamically accept and process an indefinite number of arguments. 
 
-[![Language](https://img.shields.io/badge/language-C-blue.svg)](https://en.wikipedia.org/wiki/C_(programming_language))
-[![Norminette](https://img.shields.io/badge/norminette-passing-success.svg)](https://github.com/42School/norminette)
+Beyond formatted output, this project provides a comprehensive overview of string parsing, modular code architecture, and precise memory management. It strictly adheres to the formatting and structural rules of the 42 Norminette. The final deliverable is a robust static library (`libftprintf.a`) capable of handling the core conversion specifiers: `%c`, `%s`, `%p`, `%d`, `%i`, `%u`, `%x`, `%X`, and `%%`.
 
-## About The Project
-
-`ft_printf` is a project in the 42 School curriculum that challenges students to recode the famous `printf` function from the standard C library. This project serves as an introduction to **variadic functions** in C, teaching how to handle an indefinite number of arguments dynamically.
-
-Beyond understanding `stdarg.h`, this project emphasizes string parsing, modular code architecture, and memory management under the strict rules of Norminette. The final deliverable is a static library (`libftprintf.a`) that can be linked to any future C projects requiring formatted output.
-
----
-
-## Features & Supported Conversions
-
-This implementation accurately replicates the behavior of the original `printf` for the following format specifiers:
-
-| Specifier | Description |
-| :---: | :--- |
-| `%c` | Prints a single character. |
-| `%s` | Prints a string. |
-| `%p` | The `void *` pointer argument is printed in hexadecimal format. |
-| `%d` | Prints a decimal (base 10) number. |
-| `%i` | Prints an integer in base 10. |
-| `%u` | Prints an unsigned decimal (base 10) number. |
-| `%x` | Prints a number in hexadecimal (base 16) lowercase format. |
-| `%X` | Prints a number in hexadecimal (base 16) uppercase format. |
-| `%%` | Prints a literal percent sign. |
-
----
-
-## Getting Started
+## Instructions
 
 ### Prerequisites
-
-To compile and use this library, you will need:
+To compile and use this library, ensure you have the following installed:
 *   `cc` or `gcc` compiler
-*   `make`
+*   `make` utility
 *   Standard C libraries (`unistd.h`, `stdlib.h`, `stdarg.h`)
+
+### Compilation and Installation
+To compile the project and generate the static library, clone the repository and run the standard `make` command at the root of the repository:
+```bash
+git clone [https://github.com/](https://github.com/)<your_username>/ft_printf.git
+cd ft_printf
+make
+```
+This process will produce the `libftprintf.a` static library file.
+
+### Execution and Usage
+To integrate `ft_printf` into your own projects, include the header file in your source code and link the compiled library during your build process.
+
+**1. Include the header:**
+```c
+#include "ft_printf.h"
+
+int main(void)
+{
+    ft_printf("Hello %s! The magic number is %d.\n", "World", 42);
+    return (0);
+}
+```
+
+**2. Compile with the library:**
+```bash
+cc -Wall -Wextra -Werror main.c -L. -lftprintf -o my_program
+./my_program
