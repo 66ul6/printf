@@ -2,27 +2,27 @@
 
 int	ft_nbr(int n)
 {
-	int	len;
-	int	temp;
+	long	num;
+	int		len;
+	int		temp;
 
+	num = n;
 	len = 0;
-	if (n == -2147483648)
-		return (write(1, "-2147483648", 11));
-	if (n < 0)
+	if (num < 0)
 	{
 		if (write(1, "-", 1) == -1)
 			return (-1);
 		len++;
-		n = -n;
+		num = -num;
 	}
-	if (n > 9)
+	if (num > 9)
 	{
-		temp = ft_nbr(n / 10);
+		temp = ft_nbr(num / 10);
 		if (temp == -1)
 			return (-1);
 		len += temp;
 	}
-	temp = ft_char((n % 10) + '0');
+	temp = ft_char((num % 10) + '0');
 	if (temp == -1)
 		return (-1);
 	len += temp;

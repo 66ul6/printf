@@ -2,24 +2,24 @@
 
 int	ft_format(va_list args, const char format)
 {
-	int	tmp;
+	int	count;
 
-	tmp = 0;
+	count = 0;
 	if (format == 'c')
-		tmp = ft_char(va_arg(args, int));
+		count = ft_char(va_arg(args, int));
 	else if (format == 's')
-		tmp = ft_str(va_arg(args, char *));
+		count = ft_str(va_arg(args, char *));
 	else if (format == 'p')
-		tmp = ft_ptr((unsigned long long)va_arg(args, void *));
+		count = ft_ptr((unsigned long long)va_arg(args, void *));
 	else if (format == 'd' || format == 'i')
-		tmp = ft_nbr(va_arg(args, int));
+		count = ft_nbr(va_arg(args, int));
 	else if (format == 'u')
-		tmp = ft_unsigned(va_arg(args, unsigned int));
+		count = ft_unsigned(va_arg(args, unsigned int));
 	else if (format == 'x' || format == 'X')
-		tmp = ft_hex(va_arg(args, unsigned int), format);
+		count = ft_hex(va_arg(args, unsigned int), format);
 	else if (format == '%')
-		tmp = ft_percent();
-	return (tmp);
+		count = ft_percent();
+	return (count);
 }
 
 int	ft_printf(const char *format, ...)
@@ -27,7 +27,7 @@ int	ft_printf(const char *format, ...)
 	va_list	args;
 	int		i;
 	int		len;
-	int		tmp;
+	int		count;
 
 	if (!format)
 		return (-1);
@@ -37,15 +37,15 @@ int	ft_printf(const char *format, ...)
 	while (format[++i])
 	{
 		if (format[i] == '%')
-			tmp = ft_format(args, format[++i]);
+			count = ft_format(args, format[++i]);
 		else
-			tmp = ft_char(format[i]);
-		if (tmp == -1)
+			count = ft_char(format[i]);
+		if (count == -1)
 		{
 			va_end(args);
 			return (-1);
 		}
-		len += tmp;
+		len += count;
 	}
 	va_end(args);
 	return (len);
